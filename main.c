@@ -24,6 +24,7 @@ static void	move(GtkWidget* widget, gpointer data)
 	game = data;
 	terrain = game->terrain;
 	ret = check_square(widget, terrain);
+	printf("ret %d\n", ret);
 }
 
 int		main(int argc, char** argv)

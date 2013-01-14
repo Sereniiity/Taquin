@@ -3,16 +3,12 @@
 #include <stdlib.h>
 #include "base.h"
 
-t_terrain*	generate_color(int i, int x, int y, t_terrain* terrain)
+t_terrain*	generate_stats(int i, int x, int y, t_terrain* terrain)
 {
 	terrain->i = i;
 	terrain->x = x;
 	terrain->y = y;
 	terrain->num = 0;
-	if (i == 15)
-		terrain->color = 0;
-	else
-		terrain->color = 1;
 	return (terrain);
 }
 
@@ -32,7 +28,7 @@ int	generate_coord(t_terrain* terrain)
 			terrain->next = malloc(sizeof(t_terrain));
 			if (terrain->next == 0)
 				return (1);
-			terrain = generate_color(i, x, y, terrain);
+			terrain = generate_stats(i, x, y, terrain);
 			terrain = terrain->next;
 			x = x + 1;
 			i = i + 1;

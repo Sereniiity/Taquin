@@ -5,13 +5,23 @@
 
 int	check_axe(t_terrain* button, t_terrain* terrain)
 {
-	check_left(button, terrain);
+	if (check_left(button, terrain))
 	{
 		return (1);
 	}
-	check_right(button, terrain);
-	check_top(button, terrain);
-	check_bot(button, terrain);
+	if (check_right(button, terrain))
+	{
+		return (1);
+	}
+	else if (check_top(button, terrain))
+	{
+		return (1);
+	}
+	else if (check_bot(button, terrain))
+	{
+		return (1);
+	}
+	return (0);
 }
 
 int	check_square(GtkWidget* widget, t_terrain* terrain)
