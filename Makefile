@@ -5,7 +5,8 @@ SRCS	=	main.c		\
 		free_all.c	\
 		tools.c		\
 		check_square.c	\
-		tools_check.c
+		tools_check.c	\
+		move.c
 
 OBJS	=	$(SRCS:.c=.o)
 LDFLAGS	= `pkg-config --libs gtk+-2.0`

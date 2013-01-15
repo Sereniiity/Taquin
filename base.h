@@ -22,6 +22,7 @@ typedef struct	s_env_game
 	t_terrain*	terrain;
 }		env_game;
 
+void	move_right(t_terrain* button, t_terrain* terrain);
 int	check_left(t_terrain* button, t_terrain* terrain);
 int	check_right(t_terrain* button, t_terrain* terrain);
 int	check_top(t_terrain* button, t_terrain* terrain);

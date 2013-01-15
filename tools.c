@@ -22,7 +22,6 @@ int	check_num(int num, t_terrain* terrain)
 	move = terrain;
 	while (count != 16)
 	{
-		printf("%d\n", num);
 		if (move->num == num)
 			return (1);
 		move = move->next;

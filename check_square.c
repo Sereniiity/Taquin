@@ -9,8 +9,9 @@ int	check_axe(t_terrain* button, t_terrain* terrain)
 	{
 		return (1);
 	}
-	if (check_right(button, terrain))
+	else if (check_right(button, terrain))
 	{
+		move_right(button, terrain);
 		return (1);
 	}
 	else if (check_top(button, terrain))
