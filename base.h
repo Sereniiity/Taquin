@@ -19,10 +19,17 @@ typedef struct	s_env_game
 	GtkWidget**	hbox;
 	GtkWidget*	window;
 	GtkWidget*	vbox;
+	GtkWidget*	button_score;
+	int		score;
 	t_terrain*	terrain;
 }		env_game;
 
+void	init_score(env_game* game);
+int	check_puzzle(t_terrain* terrain);
+void	move_left(t_terrain* button, t_terrain* terrain);
 void	move_right(t_terrain* button, t_terrain* terrain);
+void	move_top(t_terrain* button, t_terrain* terrain);
+void	move_bot(t_terrain* button, t_terrain* terrain);
 int	check_left(t_terrain* button, t_terrain* terrain);
 int	check_right(t_terrain* button, t_terrain* terrain);
 int	check_top(t_terrain* button, t_terrain* terrain);

@@ -6,12 +6,15 @@
 void	free_terrain(t_terrain*	terrain)
 {
 	t_terrain*	tmp;
+	int		count;
 
-	while (terrain != 0)
+	count = 0;
+	while (count != 15)
 	{
 		tmp = terrain->next;
 		free(terrain);
 		terrain = tmp;
+		count = count + 1;
 	}
 	free(terrain);
 }

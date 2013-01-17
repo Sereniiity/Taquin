@@ -86,13 +86,21 @@ int	init_game(env_game* game)
 {
 	game->vbox = gtk_vbox_new(TRUE, 0);
 	game->button = malloc(16 * sizeof(GtkWidget*));
+	if (game->button == 0)
+		return (1);
 	game->terrain = malloc(sizeof(t_terrain));
-	game->hbox = malloc(4 * sizeof(GtkWidget*));
+	if (game->terrain == 0)
+		return (1);
+	game->hbox = malloc(5 * sizeof(GtkWidget*));
+	if (game->hbox == 0)
+		return (1);
 	if(generate_coord(game->terrain))
 		return (1);
 	game->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_default_size(GTK_WINDOW(game->window), 800, 800);
 	gtk_window_set_position(GTK_WINDOW(game->window),GTK_WIN_POS_CENTER);
 	gtk_container_set_border_width(GTK_CONTAINER(game->window), 0);
+	game->hbox[0] = gtk_hbox_new(TRUE, 0);
+	gtk_box_pack_start(GTK_BOX(game->vbox), game->hbox[0], TRUE, TRUE, 0);
 	return (0);
 }
